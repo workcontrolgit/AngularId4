@@ -6,3 +6,20 @@
     <p><i class="far fa-bookmark"></i> <span translate>Version</span> {{ version }}</p>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">profileData</h5>
+    <pre>
+      {{ profileData$ | async | json }}
+    </pre>
+      </div>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">accessToken</h5>
+      {{ accessToken$ | json }}
+    </div>
+  </div>
