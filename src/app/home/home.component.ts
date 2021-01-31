@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
-import { DataService } from './data.service';
 import { Logger } from '@core';
 import { PersonQuery } from '@app/models/person.query';
+
+import { ApiHttpService } from '@core/services/api-http.service';
+import { ApiEndpointsService } from '@core/services/api-endpoints.service';
+
 
 const log = new Logger('App');
 
@@ -17,15 +20,35 @@ export class HomeComponent implements OnInit {
   isLoading = false;
   webapiData$: PersonQuery;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    // Application Services
+    private apiHttpService: ApiHttpService,
+    private apiEndpointsService: ApiEndpointsService) { }
 
   ngOnInit() {
     log.debug('init');
   }
+
+  // callapi() {
+  //   this.isLoading = true;
+  //   this.dataService
+  //     .getPersons()
+  //     .pipe(
+  //       finalize(() => {
+  //         this.isLoading = false;
+  //       })
+  //     )
+  //     .subscribe((data) => {
+  //       this.webapiData$ = data;
+  //       //log.debug('this.webapiData$ ' + JSON.stringify(this.webapiData$));
+  //       //log.debug(JSON.stringify(data));
+  //     });
+  // }
+
   callapi() {
     this.isLoading = true;
-    this.dataService
-      .getPersons()
+    this.apiHttpService
+      .get(this.apiEndpointsService.getPersonsEndpoint())
       .pipe(
         finalize(() => {
           this.isLoading = false;
@@ -33,8 +56,9 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((data) => {
         this.webapiData$ = data;
-        log.debug('this.webapiData$ ' + JSON.stringify(this.webapiData$));
-        log.debug(JSON.stringify(data));
+        //log.debug('this.webapiData$ ' + JSON.stringify(this.webapiData$));
+        //log.debug(JSON.stringify(data));
       });
   }
+
 }
