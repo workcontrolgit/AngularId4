@@ -1,3 +1,4 @@
+The repository is source code for medium story https://medium.com/scrum-and-coke/securing-angular-11-app-with-identityserver4-and-code-flow-pkce-5eddc68666b2?sk=d1d788710371817c627244cc72219af9
 # ngX Starter Kit
 
 Web project starter kit including modern tools and workflow based on
