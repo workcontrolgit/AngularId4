@@ -10,10 +10,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private authService: AuthService) {}
 
-  intercept(
-    request: HttpRequest<any>,
-    next: HttpHandler
-  ) {
+  intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (!this.secureRoutes.find((x) => request.url.startsWith(x))) {
       return next.handle(request);
     }

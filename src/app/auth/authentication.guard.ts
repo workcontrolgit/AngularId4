@@ -23,7 +23,6 @@ export class AuthenticationGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-
     this.isAuthenticated$ = this.authService.isLoggedIn;
     this.isAuthenticated$.subscribe((data: boolean) => {
       log.debug('AuthenticationGuard - canActivate ', data);

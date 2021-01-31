@@ -33,7 +33,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
     "@ngx-translate/core": "^13.0.0",
-    "angular-auth-oidc-client": "11.3.0",
+    "angular-auth-oidc-client": "11.4.3",
     "bootstrap": "^4.5.3",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.1",

@@ -1,4 +1,4 @@
 export interface ResponseBase {
-    message: string;
-    isError: boolean;
+  message: string;
+  isError: boolean;
 }

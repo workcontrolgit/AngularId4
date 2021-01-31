@@ -24,9 +24,7 @@ export class LoginComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
   url: string;
 
-  constructor(
-    private authService: AuthService
-  ) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.isAuthenticated$ = this.authService.isLoggedIn;

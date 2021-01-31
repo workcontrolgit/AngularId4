@@ -17,12 +17,10 @@ export class AboutComponent implements OnInit {
   accessToken$: any;
   isAuthenticated$: Observable<boolean>;
 
-  constructor(
-    private authservice: AuthService,
-  ) {}
+  constructor(private authservice: AuthService) {}
 
   ngOnInit() {
-    this.isAuthenticated$ = this.authservice.isLoggedIn;    
+    this.isAuthenticated$ = this.authservice.isLoggedIn;
     this.profileData$ = this.authservice.userData;
     this.accessToken$ = this.authservice.token;
   }

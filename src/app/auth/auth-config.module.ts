@@ -16,6 +16,7 @@ export function configureAuth(oidcConfigService: OidcConfigService): () => Promi
       postLoginRoute: window.location.origin,
       renewTimeBeforeTokenExpiresInSeconds: 30,
       logLevel: 3,
+      secureRoutes: ['https://my-secure-url.com/', 'https://my-second-secure-url.com/', 'https://devkit-api-employeeprofile.azurewebsites.net/api'],
     });
 }
 
