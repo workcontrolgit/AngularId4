@@ -5,39 +5,40 @@
       <span translate>Hello world !</span>
     </h1>
     <app-loader [isLoading]="isLoading"></app-loader>
-    <q [hidden]="isLoading">{{ quote }}</q>
-  </div>
-  <button class="btn btn-secondary" (click)="callapi()">Test API</button>
-
-  <div class="table-responsive" *ngIf="webapiData$">
-    <table class="table table-hover table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th>id</th>
-          <th>firstName</th>
-          <th>lastName</th>
-          <th>dateofBirth</th>
-          <th>fullName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of webapiData$.result">
-          <td>{{ item.id }}</td>
-          <td>{{ item.firstName }}</td>
-          <td>{{ item.lastName }}</td>
-          <td>{{ item.dateOfBirth }}</td>
-          <td>{{ item.fullName }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <button class="btn btn-primary" (click)="callapi()">Test API</button>
+    <!-- <q [hidden]="isLoading">{{ quote }}</q> -->
   </div>
   <div class="card" *ngIf="webapiData$">
-    <div class="card-body">
-      <h5 class="card-title">webapiData</h5>
-      <pre>
-          <!-- {{ webapiData$ | async | json }} -->
-          {{ webapiData$ | json }}
-        </pre>
+    <div class="card-header">
+      This is an examaple of making a secure REST API call with HTTP Client library.  The JWT Access token is passed thru the header.  The JSON response from the server is displayed in the table format.
+    </div>
+    <p class="card-title">REST Endpoint: https://devkit-api-employeeprofile.azurewebsites.net/api/v1/Persons</p>
+    <div class="card-body" *ngIf="webapiData$">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th>id</th>
+              <th>firstName</th>
+              <th>lastName</th>
+              <th>dateofBirth</th>
+              <th>fullName</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of webapiData$.result">
+              <td>{{ item.id }}</td>
+              <td>{{ item.firstName }}</td>
+              <td>{{ item.lastName }}</td>
+              <td>{{ item.dateOfBirth }}</td>
+              <td>{{ item.fullName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      Note:  To see the JWT Access Token, click on About menu.
     </div>
   </div>
 </div>
