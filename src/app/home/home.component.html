@@ -7,39 +7,39 @@
     <app-loader [isLoading]="isLoading"></app-loader>
     <q [hidden]="isLoading">{{ quote }}</q>
   </div>
-</div>
+  <button class="btn btn-secondary" (click)="callapi()">Test API</button>
 
-<button class="btn btn-secondary" (click)="callapi()">Call API</button>
-
-<div class="table-responsive" *ngIf="webapiData$">
-  <table class="table table-hover table-bordered">
+  <div class="table-responsive" *ngIf="webapiData$">
+    <table class="table table-hover table-bordered">
       <thead class="thead-light">
-          <tr>
-              <th>id</th>
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>dateofBirth</th>
-              <th>fullName</th>
-          </tr>
+        <tr>
+          <th>id</th>
+          <th>firstName</th>
+          <th>lastName</th>
+          <th>dateofBirth</th>
+          <th>fullName</th>
+        </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of webapiData$.result">
           <td>{{item.id}}</td>
           <td>{{item.firstName}}</td>
           <td>{{item.lastName}}</td>
-          <td>{{item.dateofBirth}}</td>
+          <td>{{item.dateOfBirth}}</td>
           <td>{{item.fullName}}</td>
         </tr>
       </tbody>
-  </table>
-</div>
-<div class="card" *ngIf="webapiData$">
-  <div class="card-body">
-    <h5 class="card-title">webapiData</h5>
-      <pre>
-        <!-- {{ webapiData$ | async | json }} -->
-        {{ webapiData$ | json }}
-      </pre>
+    </table>
   </div>
+  <div class="card" *ngIf="webapiData$">
+    <div class="card-body">
+      <h5 class="card-title">webapiData</h5>
+      <pre>
+          <!-- {{ webapiData$ | async | json }} -->
+          {{ webapiData$ | json }}
+        </pre>
+    </div>
+  </div>
+  
 </div>
 

@@ -4,25 +4,7 @@ import { finalize } from 'rxjs/operators';
 import { QuoteService } from './quote.service';
 import { DataService } from './data.service';
 import { Logger} from '@core';
-
-
-class ResponseBase {
-  message: string;
-  isError: boolean;
-}
-
-class Person {
-  id: number;
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  fullName: string;
-}
-
-
-class PersonResponse extends ResponseBase {
-  result: Person[];
-}
+import {PersonQuery} from '@app/models/person.query'
 
 const log = new Logger('App');
 
@@ -34,8 +16,7 @@ const log = new Logger('App');
 export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
-  webapiData$: PersonResponse;
-  //webapiData$: Observable<any>;
+  webapiData$: PersonQuery;
 
   constructor(private quoteService: QuoteService,private dataService: DataService) {}
 

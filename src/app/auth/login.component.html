@@ -14,17 +14,6 @@
 
           <div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
             <button class="btn btn-primary w-40" (click)="logout()">Logout</button>
-            <!-- <hr />
-
-            <br />
-
-            Is Authenticated: {{ isAuthenticated }}
-
-            <br />
-            userData
-            <pre>{{ userData$ | async | json }}</pre>
-
-            <br /> -->
           </div>
 
           <ng-template #noAuth>

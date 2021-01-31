@@ -21,22 +21,15 @@ const log = new Logger('Login');
 export class LoginComponent implements OnInit {
   version: string | null = environment.version;
   error: string | undefined;
-  loginForm!: FormGroup;
-  isLoading = false;
-  userData$: Observable<any>;
   isAuthenticated$: Observable<boolean>;
+  url: string;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService,
     private authService: AuthService
   ) {}
 
   ngOnInit() {
-    // this.userData$ = this.authService.userData;
-    // this.isAuthenticated$ = this.authService.isLoggedIn;
+    this.isAuthenticated$ = this.authService.isLoggedIn;
   }
 
   login() {
@@ -45,6 +38,8 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
+    // this.url = '/login';
+    // this.authService.signOut(this.url);
     this.authService.signOut();
   }
 }
