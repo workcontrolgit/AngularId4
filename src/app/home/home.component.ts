@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { Logger } from '@core';
-import { PersonQuery } from '@app/models/person.query';
+import { PersonQuery } from '@app/models/person-query';
 
 import { ApiHttpService } from '@core/services/api-http.service';
 import { ApiEndpointsService } from '@core/services/api-endpoints.service';
