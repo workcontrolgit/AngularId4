@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { AuthenticationService, CredentialsService } from '@app/auth';
 import { AuthService } from '@app/auth/auth.service';
+import {ProfileStandardClaims} from '@app/models/profile-standard-claims';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +14,9 @@ import { AuthService } from '@app/auth/auth.service';
 export class HeaderComponent implements OnInit {
   menuHidden = true;
   url: string;
+  profileData$: Observable<ProfileStandardClaims>;
+  name: string;
+
 
   constructor(
     private router: Router,
@@ -27,14 +32,20 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    //this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
-    // this.url = '/login';
-    // this.authService.signOut(this.url);
     this.authService.signOut();
   }
 
   get username(): string | null {
-    const credentials = this.credentialsService.credentials;
-    return credentials ? credentials.username : null;
+    this.profileData$ = this.authService.userData;
+    this.profileData$.subscribe(
+      data => 
+      {
+        this.name = data.name;
+        console.log (this.name)
+      }
+    )
+    return this.name ? this.name : null;
+
+
   }
 }

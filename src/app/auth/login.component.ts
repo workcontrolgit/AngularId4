@@ -31,13 +31,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    log.debug('doLogin');
+    log.debug('login');
     this.authService.doLogin();
   }
 
   logout() {
     // this.url = '/login';
     // this.authService.signOut(this.url);
+    log.debug('logout');
     this.authService.signOut();
   }
 }

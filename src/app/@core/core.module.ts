@@ -9,7 +9,9 @@ import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 //import { AuthInterceptor } from '@core/http/auth.interceptor';
 import { AuthInterceptor } from 'angular-auth-oidc-client';
-
+import { Constants } from '../config/constants';
+import {ApiHttpService } from '@core/services/api-http.service';
+import {ApiEndpointsService} from '@core/services/api-endpoints.service';
 @NgModule({
   imports: [CommonModule, HttpClientModule, TranslateModule, RouterModule],
   providers: [
@@ -32,6 +34,9 @@ import { AuthInterceptor } from 'angular-auth-oidc-client';
       useClass: AuthInterceptor,
       multi: true,
     },
+    Constants,
+    ApiHttpService,
+    ApiEndpointsService,
   ],
 })
 export class CoreModule {
