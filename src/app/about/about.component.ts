@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { environment } from '@env/environment';
 
 import { AuthService } from '@app/auth/auth.service';
+import {ProfileStandardClaims} from '@app/models/profile-standard-claims';
 
 @Component({
   selector: 'app-about',
@@ -12,16 +13,15 @@ import { AuthService } from '@app/auth/auth.service';
 })
 export class AboutComponent implements OnInit {
   version: string | null = environment.version;
-  profileData$: Observable<any>;
-  webapiData$: Observable<any>;
-  accessToken$: any;
   isAuthenticated$: Observable<boolean>;
+  accessToken$: any;
+  profileData$: Observable<ProfileStandardClaims>;
 
   constructor(private authservice: AuthService) {}
 
   ngOnInit() {
     this.isAuthenticated$ = this.authservice.isLoggedIn;
-    this.profileData$ = this.authservice.userData;
     this.accessToken$ = this.authservice.token;
+    this.profileData$ = this.authservice.userData;
   }
 }
