@@ -7,7 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
-//import { AuthInterceptor } from '@core/http/auth.interceptor';
 import { AuthInterceptor } from 'angular-auth-oidc-client';
 import { Constants } from '../config/constants';
 import {ApiHttpService } from '@core/services/api-http.service';

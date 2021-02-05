@@ -10,8 +10,8 @@ export function configureAuth(oidcConfigService: OidcConfigService): () => Promi
       stsServer: environment.stsServer, //'https://devkit-sts.azurewebsites.net',
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
-      clientId: environment.clientId, //'devkit-clients-spa.pkce',
-      scope: environment.scope, //'openid profile email roles app.api.employeeprofile.read', // 'openid profile offline_access ' + your scopes
+      clientId: environment.clientId, //'devkit-clients-spa.pkce'
+      scope: environment.scope, //'openid profile email roles app.api.employeeprofile.read'
       responseType: 'code',
       silentRenew: true,
       silentRenewUrl: '${window.location.origin}/silent-renew.html',
@@ -19,7 +19,7 @@ export function configureAuth(oidcConfigService: OidcConfigService): () => Promi
       postLoginRoute: window.location.origin,
       renewTimeBeforeTokenExpiresInSeconds: 30,
       logLevel: 3,
-      secureRoutes: environment.secureRoutes, //['https://my-second-secure-url.com/', 'https://devkit-api-employeeprofile.azurewebsites.net/api'],
+      secureRoutes: environment.secureRoutes, //['https://localhost:44321/api', 'https://devkit-api-employeeprofile.azurewebsites.net/api'],
     });
 }
 
