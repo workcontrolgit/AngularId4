@@ -44,7 +44,7 @@ export class ApiEndpointsService {
 
 
     // call regular endpoint without boolean true at end
-    public getPersonsEndpoint = (): string => this.createUrl('Persons');
+    public getPersonsEndpoint = (): string => this.createUrl('Employees');
 
 
     /* #endregion */
