@@ -29,22 +29,6 @@ export class HomeComponent implements OnInit {
     log.debug('init');
   }
 
-  // callapi() {
-  //   this.isLoading = true;
-  //   this.dataService
-  //     .getPersons()
-  //     .pipe(
-  //       finalize(() => {
-  //         this.isLoading = false;
-  //       })
-  //     )
-  //     .subscribe((data) => {
-  //       this.webapiData$ = data;
-  //       //log.debug('this.webapiData$ ' + JSON.stringify(this.webapiData$));
-  //       //log.debug(JSON.stringify(data));
-  //     });
-  // }
-
   callapi() {
     this.isLoading = true;
     this.apiHttpService
@@ -56,8 +40,6 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((data) => {
         this.webapiData$ = data;
-        //log.debug('this.webapiData$ ' + JSON.stringify(this.webapiData$));
-        //log.debug(JSON.stringify(data));
       });
   }
 

@@ -17,7 +17,7 @@ export const environment = {
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US', 'fr-FR'],
   secureRoutes: ['https://localhost:44321/api', 'https://devkit-api-employeeprofile.azurewebsites.net/api'],
-  stsServer: 'https://devkit-sts.azurewebsites.net',
+  stsServer: 'https://cat-token-identity.azurewebsites.net',
   clientId: 'devkit-clients-spa.pkce',
   scope: 'openid profile email roles app.api.employeeprofile.read',
   Api_Endpoint: 'https://devkit-api-employeeprofile.azurewebsites.net/api/v1',

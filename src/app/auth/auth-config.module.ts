@@ -7,10 +7,10 @@ export function configureAuth(oidcConfigService: OidcConfigService): () => Promi
 
   return () =>
     oidcConfigService.withConfig({
-      stsServer: environment.stsServer, //'https://devkit-sts.azurewebsites.net',
+      stsServer: environment.stsServer,
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
-      clientId: environment.clientId, //'devkit-clients-spa.pkce'
+      clientId: environment.clientId,
       scope: environment.scope, //'openid profile email roles app.api.employeeprofile.read'
       responseType: 'code',
       silentRenew: true,
