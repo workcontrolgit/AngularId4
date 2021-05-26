@@ -8,7 +8,7 @@ import { ApiHttpService } from '@core/services/api-http.service';
 import { ApiEndpointsService } from '@core/services/api-endpoints.service';
 
 
-const log = new Logger('App');
+const log = new Logger('Home');
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ const log = new Logger('App');
 export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
-  webapiData$: PersonQuery;
+  webapiData$: any;
 
   constructor(
     // Application Services
@@ -38,8 +38,11 @@ export class HomeComponent implements OnInit {
           this.isLoading = false;
         })
       )
-      .subscribe((data) => {
-        this.webapiData$ = data;
+      .subscribe((resp) => {
+        this.webapiData$ = resp;
+        log.debug(resp.data);
+        log.debug(this.webapiData$);
+
       });
   }
 

@@ -16,12 +16,12 @@ export const environment = {
   serverUrl: '/api',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US', 'fr-FR'],
-  secureRoutes: ['https://localhost:44321/api', 'https://devkit-api-employeeprofile.azurewebsites.net/api'],
+  secureRoutes: ['https://localhost:44321/api', 'https://cat-netcore-api.azurewebsites.net/api'],
   stsServer: 'https://cat-token-identity.azurewebsites.net',
   clientId: 'devkit-clients-spa.pkce',
   scope: 'openid profile email roles app.api.employeeprofile.read',
-  Api_Endpoint: 'https://devkit-api-employeeprofile.azurewebsites.net/api/v1',
-  Api_Mock_Endpoint: 'https://devkit-api-employeeprofile.azurewebsites.net/api/v1',
+  Api_Endpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
+  Api_Mock_Endpoint: 'https://localhost:44321/api',
 };
 
 /*

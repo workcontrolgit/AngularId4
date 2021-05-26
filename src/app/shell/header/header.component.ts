@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
       data => 
       {
         this.name = data.name;
-        console.log (this.name)
+        //console.log (this.name)
       }
     )
     return this.name ? this.name : null;
