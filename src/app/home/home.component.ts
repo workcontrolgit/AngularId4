@@ -18,7 +18,7 @@ const log = new Logger('Home');
 export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
-  webapiData$: PersonQuery;
+  webapiData$: any;
 
   constructor(
     // Application Services
@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((resp) => {
         this.webapiData$ = resp;
+        log.debug(resp.data);
         log.debug(this.webapiData$);
 
       });
