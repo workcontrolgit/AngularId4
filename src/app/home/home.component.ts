@@ -7,7 +7,6 @@ import { PersonQuery } from '@app/models/person-query';
 import { ApiHttpService } from '@core/services/api-http.service';
 import { ApiEndpointsService } from '@core/services/api-endpoints.service';
 
-
 const log = new Logger('Home');
 
 @Component({
@@ -23,7 +22,8 @@ export class HomeComponent implements OnInit {
   constructor(
     // Application Services
     private apiHttpService: ApiHttpService,
-    private apiEndpointsService: ApiEndpointsService) { }
+    private apiEndpointsService: ApiEndpointsService
+  ) {}
 
   ngOnInit() {
     log.debug('init');
@@ -42,8 +42,6 @@ export class HomeComponent implements OnInit {
         this.webapiData$ = resp;
         log.debug(resp.data);
         log.debug(this.webapiData$);
-
       });
   }
-
 }

@@ -29,5 +29,4 @@ export class AuthService {
   signOut() {
     this.oidcSecurityService.logoff();
   }
-
 }

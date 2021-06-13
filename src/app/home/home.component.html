@@ -10,7 +10,8 @@
   </div>
   <div class="card" *ngIf="webapiData$">
     <div class="card-header">
-      This is an example of calling a secure REST API using Angular HTTP Client library.  The JWT Access token is passed thru the header.  The JSON response from the server is displayed in the table format.
+      This is an example of calling a secure REST API using Angular HTTP Client library. The JWT Access token is passed
+      thru the header. The JSON response from the server is displayed in the table format.
     </div>
     <p class="card-title">REST Endpoint: https://cat-netcore-api.azurewebsites.net/api/v1/Employees</p>
     <div class="card-body" *ngIf="webapiData$">
@@ -37,8 +38,6 @@
         </table>
       </div>
     </div>
-    <div class="card-footer text-muted">
-      Note:  To view the Access Token, click on About menu.
-    </div>
+    <div class="card-footer text-muted">Note: To view the Access Token, click on About menu.</div>
   </div>
 </div>

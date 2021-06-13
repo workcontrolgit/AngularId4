@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
 
 import { AuthService } from '@app/auth/auth.service';
-import {ProfileStandardClaims} from '@app/models/profile-standard-claims';
+import { ProfileStandardClaims } from '@app/models/profile-standard-claims';
 
 @Component({
   selector: 'app-about',

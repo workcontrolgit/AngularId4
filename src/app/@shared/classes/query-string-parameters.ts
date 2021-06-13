@@ -1,14 +1,14 @@
 export class QueryStringParameters {
-    private paramsAndValues: string[];
+  private paramsAndValues: string[];
 
-    constructor() {
-        this.paramsAndValues = [];
-    }
+  constructor() {
+    this.paramsAndValues = [];
+  }
 
-    public push(key: string, value: Object): void {
-        value = encodeURIComponent(value.toString());
-        this.paramsAndValues.push([key, value].join('='));
-    }
+  public push(key: string, value: Object): void {
+    value = encodeURIComponent(value.toString());
+    this.paramsAndValues.push([key, value].join('='));
+  }
 
-    public toString = (): string => this.paramsAndValues.join('&');
+  public toString = (): string => this.paramsAndValues.join('&');
 }

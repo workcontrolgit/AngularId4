@@ -2,9 +2,7 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AuthModule, OidcConfigService } from 'angular-auth-oidc-client';
 import { environment } from '@env/environment';
 
-
 export function configureAuth(oidcConfigService: OidcConfigService): () => Promise<any> {
-
   return () =>
     oidcConfigService.withConfig({
       stsServer: environment.stsServer,

@@ -10,7 +10,7 @@
       <h5 class="card-title">accessToken</h5>
     </div>
     <div class="card-body">
-{{ accessToken$ | json }}
+      {{ accessToken$ | json }}
     </div>
   </div>
   <p></p>
@@ -19,11 +19,10 @@
       <h5 class="card-title">profileData</h5>
     </div>
     <div class="card-body">
-      <pre>
-{{ profileData$ | async | json }}
-    </pre>
+      <pre
+        >{{ profileData$ | async | json }}
+    </pre
+      >
     </div>
   </div>
-
-
 </div>
