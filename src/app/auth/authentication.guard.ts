@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 import { Logger } from '@core';
-import { CredentialsService } from './credentials.service';
 
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -16,11 +15,7 @@ export class AuthenticationGuard implements CanActivate {
   isAuthenticated$: Observable<boolean>;
   isAuthenticated: boolean = false;
 
-  constructor(
-    private router: Router,
-    private credentialsService: CredentialsService,
-    private authService: AuthService
-  ) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     this.isAuthenticated$ = this.authService.isLoggedIn;

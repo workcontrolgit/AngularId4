@@ -5,7 +5,6 @@ import { finalize } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 import { Logger, UntilDestroy, untilDestroyed } from '@core';
-import { AuthenticationService } from './authentication.service';
 
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';

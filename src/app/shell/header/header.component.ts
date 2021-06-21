@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { AuthenticationService, CredentialsService } from '@app/auth';
+//import { AuthenticationService, CredentialsService } from '@app/auth';
 import { AuthService } from '@app/auth/auth.service';
 import { ProfileStandardClaims } from '@app/models/profile-standard-claims';
 
@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private credentialsService: CredentialsService,
+    // private authenticationService: AuthenticationService,
+    // private credentialsService: CredentialsService,
     private authService: AuthService
   ) {}
 
